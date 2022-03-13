@@ -98,6 +98,10 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+body.hidden {
+  overflow: hidden;
+}
+
 .burger {
   display: none;
   width: 30px;
