@@ -1,0 +1,210 @@
+@import './nullstyle.scss';
+@import './variables.scss';
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.burger {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        bottom: 0;
+        left: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        top: 0;
+        left: 0;
+    }
+    & span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        bottom: 9px;
+        left: 0;
+    }
+    margin-bottom: 30px;
+    @media (max-width:$breakpointmd) {
+        display: block;
+    }
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #061e37;
+    padding: 20px 0px 0px 20px;
+    &__close {
+        display: block;
+        color: #ffffff;
+        font-size: 1.875rem;
+        margin-bottom: 30px;
+    }
+    &__link {
+        display: block;
+        color: #ffffff;
+        font-size: 1.875rem;
+        margin-bottom: 30px;
+    }
+    &.active {
+        display: block;
+        transition-property: 0.5s;
+        transition-timing-function: ease;
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 60px 0px 0px 0px;
+    &__link-header {
+        font-size: 0.9rem;
+        font-weight: $fwsemibold;
+        color: #fff;
+        margin-right: 50px;
+        transition-duration: 0.4s;
+        transition-property: color;
+        &:last-child {
+            margin-right: 0px;
+        }
+        &:hover {
+            transition-duration: 0.4s;
+            transition-property: color;
+            color: #061e37;
+        }
+    }
+    &__button-header {
+        color: #ffffff;
+        font-weight: $fwregular;
+        font-size: .75rem;
+        text-transform: lowercase;
+        border-radius: 2px;
+        border: 1px solid #ffffff;
+        padding: 6px 18px;
+        transition-duration: 0.4s;
+        transition-property: color, background-color;
+        &:hover {
+            transition-duration: 0.4s;
+            transition-property: color, background-color;
+            color: #061e37;
+            background-color: #fff;
+        }
+    }
+    @media (max-width:$breakpointmd) {
+        display: none;
+    }
+}
+
+.header {
+    padding: 0px 30px;
+    background: url('../img/header/header-bg.png') no-repeat center / cover;
+    height: 75vh;
+    &__info {
+        flex-basis: 50%;
+        @media (max-width: $breakpointxl) {
+            flex-basis: 100%;
+        }
+    }
+    &__video {
+        margin-top: 40px;
+        margin-left: -20px;
+        & img {
+            @media (max-width: 642px) {
+                width: 100%;
+            }
+        }
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $breakpointxl) {
+            flex-wrap: wrap;
+        }
+    }
+    &__title {
+        color: #ffffff;
+        font-size: 3.43rem;
+        line-height: 65px;
+        font-weight: $fwextrabold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        padding-right: 80px;
+        @media (max-width: $breakpointsm) {
+            padding-right: 0px;
+        }
+    }
+    &__subtitle {
+        font-size: 1.125rem;
+        color: #ffffff;
+        font-weight: $fwregular;
+        line-height: 35px;
+        font-weight: $fwlight;
+        margin-bottom: 40px;
+        padding-right: 70px;
+        @media (max-width: $breakpointsm) {
+            padding-right: 0px;
+        }
+    }
+    &__button {
+        padding-top: 20px;
+        display: inline-block;
+        text-align: center;
+        width: 150px;
+        height: 55px;
+        text-transform: uppercase;
+        &.dark {
+            background-color: #061e37;
+            color: #ffffff;
+            font-weight: $fwregular;
+            border-radius: 5px;
+            filter: drop-shadow(0px 5px 2.5px rgba(0, 0, 0, 0.15));
+            margin-right: 30px;
+            @media (max-width: $breakpointxs) {
+                margin-bottom: 30px;
+            }
+        }
+        &.light {
+            width: 150px;
+            height: 55px;
+            background-color: #ffffff;
+            color: #061e37;
+            font-weight: $fwregular;
+            border-radius: 5px;
+            filter: drop-shadow(0px 5px 2.5px rgba(0, 0, 0, 0.15));
+        }
+    }
+    @media (max-width: $breakpointxl) {
+        height: 100vh;
+    }
+    @media (max-width:$breakpointmd) {
+        padding-top: 30px;
+    }
+    @media (max-width:$breakpointxs) {
+        height: 115vh;
+    }
+    @media (max-width:375px) {
+        height: 150vh;
+    }
+}
