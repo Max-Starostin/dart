@@ -1,12 +1,48 @@
-$fwsemibold:600;
-$fwregular:400;
 $fwlight:300;
+$fwregular:400;
 $fwmedium:500;
+$fwsemibold:600;
 $fwbold:700;
 $fwextrabold:800;
+$maincolor: #061e37;
+$subcolor: #b0bec5;
 $breakpointxs: 420px;
 $breakpointsm: 576px;
 $breakpointmd: 768px;
 $breakpointlg: 992px;
 $breakpointxl: 1200px;
 $breakpointxxl: 1400px;
+%button {
+    padding-top: 20px;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    height: 55px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-weight: $fwregular;
+}
+
+%title {
+    font-size: 2.8125rem;
+    color: $maincolor;
+    text-align: center;
+    font-weight: $fwsemibold;
+}
+
+%subtitle {
+    font-size: 1.5625rem;
+    color: $subcolor;
+    text-align: center;
+    font-weight: $fwsemibold;
+}
+
+%titletext {
+    width: 565px;
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: $subcolor;
+    line-height: 1.5625rem;
+    font-weight: $fwregular;
+    text-align: center;
+}

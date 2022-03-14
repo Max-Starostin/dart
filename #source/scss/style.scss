@@ -51,12 +51,13 @@ body {
 
 .menu {
     display: none;
+    width: none;
+    height: none;
     position: absolute;
     z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background-color: #061e37;
+    background-color: $maincolor;
     padding: 20px 0px 0px 20px;
+    transition-duration: 0.5s;
     &__close {
         display: block;
         color: #ffffff;
@@ -71,8 +72,8 @@ body {
     }
     &.active {
         display: block;
-        transition-property: 0.5s;
-        transition-timing-function: ease;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -95,7 +96,7 @@ body {
         &:hover {
             transition-duration: 0.4s;
             transition-property: color;
-            color: #061e37;
+            color: $maincolor;
         }
     }
     &__button-header {
@@ -111,7 +112,7 @@ body {
         &:hover {
             transition-duration: 0.4s;
             transition-property: color, background-color;
-            color: #061e37;
+            color: $maincolor;
             background-color: #fff;
         }
     }
@@ -171,17 +172,10 @@ body {
         }
     }
     &__button {
-        padding-top: 20px;
-        display: inline-block;
-        text-align: center;
-        width: 150px;
-        height: 55px;
-        text-transform: uppercase;
+        @extend %button;
         &.dark {
-            background-color: #061e37;
+            background-color: $maincolor;
             color: #ffffff;
-            font-weight: $fwregular;
-            border-radius: 5px;
             filter: drop-shadow(0px 5px 2.5px rgba(0, 0, 0, 0.15));
             margin-right: 30px;
             @media (max-width: $breakpointxs) {
@@ -192,14 +186,12 @@ body {
             width: 150px;
             height: 55px;
             background-color: #ffffff;
-            color: #061e37;
-            font-weight: $fwregular;
-            border-radius: 5px;
+            color: $maincolor;
             filter: drop-shadow(0px 5px 2.5px rgba(0, 0, 0, 0.15));
         }
     }
     @media (max-width: $breakpointxl) {
-        height: 100vh;
+        height: 110vh;
     }
     @media (max-width:$breakpointmd) {
         padding-top: 30px;
@@ -209,5 +201,210 @@ body {
     }
     @media (max-width:375px) {
         height: 150vh;
+    }
+}
+
+.management {
+    padding: 100px 10px;
+    &__title {
+        @extend %title;
+        margin-bottom: 15px;
+    }
+    &__subtitle {
+        @extend %subtitle;
+        margin-bottom: 20px;
+    }
+    &__titletext {
+        @extend %titletext;
+        @media (max-width: $breakpointmd) {
+            width: auto;
+        }
+        margin-bottom: 100px;
+    }
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex-basis: 33.3333%;
+        padding: 0px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (max-width: $breakpointlg) {
+            padding: 0px 20px;
+        }
+        @media (max-width:$breakpointsm) {
+            flex-basis: 100%;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        &-icon img {
+            height: 68px;
+        }
+        &-title {
+            margin: 40px 0px 20px 0px;
+            font-weight: $fwsemibold;
+            color: $maincolor;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+            text-align: center;
+        }
+        &-text {
+            text-align: center;
+            font-size: 0.9375rem;
+            font-weight: $fwregular;
+            color: #78909c;
+            line-height: 1.25rem;
+        }
+    }
+    &__button {
+        @extend %button;
+        display: block;
+        margin: 0 auto;
+        margin-top: 80px;
+        &.green {
+            border-radius: 5px;
+            font-weight: $fwmedium;
+            filter: drop-shadow(0px 5px 2.5px rgba(0, 0, 0, 0.15));
+            background-color: #1de9b6;
+            color: #ffffff;
+        }
+    }
+}
+
+.about {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex-basis: 25%;
+        display: flex;
+        justify-content: center;
+        padding: 45px 0px;
+        &:nth-child(1) {
+            background-color: #80d8ff;
+        }
+        &:nth-child(2) {
+            background-color: #82b1ff;
+        }
+        &:nth-child(3) {
+            background-color: #b388ff;
+        }
+        &:nth-child(4) {
+            background-color: #ea80fc;
+        }
+        @media (max-width:$breakpointlg) {
+            flex-basis: 50%;
+        }
+        @media (max-width:$breakpointsm) {
+            flex-basis: 100%;
+        }
+    }
+    &__icon {
+        margin-right: 25px;
+    }
+    &__text {
+        width: 120px;
+        color: #ffffff;
+        font-weight: $fwextrabold;
+        font-size: 1.25rem;
+        line-height: 1.5625rem;
+        & span {
+            display: block;
+        }
+    }
+}
+
+.services {
+    &__container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    padding: 100px 10px;
+    &__title {
+        @extend %title;
+        margin-bottom: 30px;
+    }
+    &__titletext {
+        @extend %titletext;
+        margin-bottom: 50px;
+        @media (max-width: $breakpointmd) {
+            width: auto;
+        }
+    }
+    &__item {
+        padding: 23px 30px 18px 30px;
+        border-radius: 5px;
+        filter: drop-shadow(0px 2px 2.5px rgba(0, 0, 0, 0.13));
+        display: flex;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-bottom: 18px;
+        &-title {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-description {
+            display: none;
+            &.active {
+                display: flex;
+                margin-top: 25px;
+                @media(max-width: $breakpointsm) {
+                    display: block;
+                }
+            }
+        }
+    }
+    &__name {
+        font-weight: $fwbold;
+        text-transform: uppercase;
+        font-size: 0.9375rem;
+        color: $maincolor;
+        &.first::before {
+            content: url('../img/services/trending_up.svg');
+            margin-right: 23px;
+        }
+        &.second::before {
+            content: url('../img/services/mail.svg');
+            margin-right: 23px;
+        }
+        &.third::before {
+            content: url('../img/services/group.svg');
+            margin-right: 23px;
+        }
+        &.fourst::before {
+            content: url('../img/services/settings.svg');
+            margin-right: 23px;
+        }
+        &.fivest::before {
+            content: url('../img/services/feed.svg');
+            margin-right: 23px;
+        }
+    }
+    &__arrow {
+        cursor: pointer;
+    }
+    &__text {
+        font-size: 0.9375rem;
+        width: 100%;
+        line-height: 25px;
+        color: $maincolor;
+        font-weight: $fwregular;
+        &:first-child {
+            margin-bottom: 33px;
+        }
+    }
+    &__img {
+        margin-right: 25px;
+        @media(max-width: $breakpointsm) {
+            margin-right: 0px;
+            margin-bottom: 15px;
+        }
     }
 }
