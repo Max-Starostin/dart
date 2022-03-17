@@ -15,40 +15,17 @@ closeButtonBurger.addEventListener('click', () => {
     siteBody.classList.remove('hidden');
 });
 
-const activeTabFirst = document.querySelector('#first-item');
-const activeTabDescriptionFirst = document.querySelector('#first__description');
+const activeTab = document.querySelectorAll('.services__item-title');
+console.log(activeTab);
 
-activeTabFirst.addEventListener('click', () => {
-    activeTabDescriptionFirst.classList.add('active');
-})
+activeTab.forEach(function(item) {
+    item.addEventListener('click', showAccordeon);
+});
 
-const activeTabSecond = document.querySelector('#second-item');
-const activeTabDescriptionSecond = document.querySelector('#second__description');
+function showAccordeon() {
+    this.nextElementSibling.classList.toggle('hidden');
+};
 
-activeTabSecond.addEventListener('click', () => {
-    activeTabDescriptionSecond.classList.add('active');
-})
-
-const activeTabThird = document.querySelector('#third-item');
-const activeTabDescriptionThird = document.querySelector('#third__description');
-
-activeTabThird.addEventListener('click', () => {
-    activeTabDescriptionThird.classList.add('active');
-})
-
-const activeTabFourst = document.querySelector('#fourst-item');
-const activeTabDescriptionFourst = document.querySelector('#fourst__description');
-
-activeTabFourst.addEventListener('click', () => {
-    activeTabDescriptionFourst.classList.add('active');
-})
-
-const activeTabFivest = document.querySelector('#fivest-item');
-const activeTabDescriptionFivest = document.querySelector('#fivest__description');
-
-activeTabFivest.addEventListener('click', () => {
-    activeTabDescriptionFivest.classList.add('active');
-})
 
 const listButtonUp = document.querySelector('.testimonials__arrow-up');
 const listButtonDown = document.querySelector('.testimonials__arrow-down');
