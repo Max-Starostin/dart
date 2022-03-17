@@ -89,7 +89,7 @@ h6 {
 }
 
 /*--------------------*/
-.header__button, .management__button, .testimonials__button {
+.header__button, .management__button, .testimonials__button, .contact__button {
   padding-top: 20px;
   display: inline-block;
   text-align: center;
@@ -100,7 +100,7 @@ h6 {
   font-weight: 400;
 }
 
-.management__title, .services__title {
+.management__title, .services__title, .contact__title {
   font-size: 2.8125rem;
   color: #061e37;
   text-align: center;
@@ -247,6 +247,34 @@ body.hidden {
   -webkit-transition-property: color;
   transition-property: color;
   color: #061e37;
+}
+
+.navigation__link-footer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 50px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.navigation__link-footer:last-child {
+  margin-right: 0px;
+}
+
+.navigation__link-footer:hover {
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  opacity: 0.5;
+}
+
+.navigation-footer {
+  padding: 0px;
+  margin-bottom: 55px;
 }
 
 .navigation__button-header {
@@ -722,7 +750,7 @@ body.hidden {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 576px) {
   .testimonials__info {
     padding: 135px 0px 20px 0px;
   }
@@ -849,4 +877,240 @@ body.hidden {
       -ms-grid-row-align: center;
       align-self: center;
   cursor: pointer;
+}
+
+.contact {
+  background-color: #fafafa;
+  padding: 70px 15px 100px 15px;
+}
+
+.contact__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__title {
+  margin-bottom: 30px;
+}
+
+.contact__subtitle {
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  color: #061e37;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.contact__form {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "First-Name Second-Name" "Email Number" "Message Message";
+  row-gap: 20px;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+}
+
+@media (max-width: 420px) {
+  .contact__form {
+        grid-template-areas: "First-Name First-Name" "Second-Name Second-Name" "Email Email" "Number Number" "Message Message";
+  }
+}
+
+.contact__info {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  border: 1px solid #061e37;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  color: #061e37;
+  font-weight: 600;
+  color: #061e37;
+}
+
+.contact__info:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: First-Name;
+}
+
+.contact__info:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Second-Name;
+}
+
+.contact__info:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: Email;
+}
+
+.contact__info:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: Number;
+}
+
+.contact__message {
+  padding: 10px 0px 0px 10px;
+  color: #061e37;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #061e37;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: Message;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #061e37;
+  font-weight: 600;
+  background-color: #fafafa;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.contact__departure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px;
+}
+
+.contact__subscribe {
+  font-size: 0.9375rem;
+  color: #061e37;
+  text-transform: lowercase;
+  font-weight: 600;
+  position: relative;
+}
+
+.contact__subscribe::before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #061e37;
+  border-radius: 3px;
+  left: -30px;
+  top: -3px;
+  cursor: pointer;
+}
+
+.contact__button {
+  background-color: #1de9b6;
+  color: #ffffff;
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
+}
+
+.footer {
+  padding: 100px 15px;
+  background-color: #061e37;
+}
+
+.footer__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__texts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 517px) {
+  .footer__texts {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__text {
+  color: #ffffff;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.footer__text:nth-child(2) {
+  margin: 0px 45px;
+  position: relative;
+}
+
+.footer__text:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  bottom: 10px;
+  left: -25px;
+}
+
+.footer__text:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  bottom: 10px;
+  right: -25px;
+}
+
+@media (max-width: 517px) {
+  .footer__contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__social-links {
+  margin-left: 15px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.footer__social-links:hover {
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  opacity: 0.5;
+}
+
+@media (max-width: 517px) {
+  .footer__social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
