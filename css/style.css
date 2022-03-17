@@ -651,7 +651,7 @@ body.hidden {
   display: none;
 }
 
-.services__item-description.active {
+.services__item-description.hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -659,7 +659,7 @@ body.hidden {
 }
 
 @media (max-width: 576px) {
-  .services__item-description.active {
+  .services__item-description.hidden {
     display: block;
   }
 }
