@@ -49,3 +49,17 @@ const activeTabDescriptionFivest = document.querySelector('#fivest__description'
 activeTabFivest.addEventListener('click', () => {
     activeTabDescriptionFivest.classList.add('active');
 })
+
+const listButtonUp = document.querySelector('.testimonials__arrow-up');
+const listButtonDown = document.querySelector('.testimonials__arrow-down');
+const testimonialsPerson = document.querySelector('#person__second');
+
+listButtonUp.addEventListener('click', () => {
+    listButtonUp.classList.add('active')
+    testimonialsPerson.classList.add('active');
+});
+
+listButtonDown.addEventListener('click', () => {
+    testimonialsPerson.classList.remove('active');
+    listButtonUp.classList.remove('active')
+});
