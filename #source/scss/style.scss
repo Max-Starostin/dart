@@ -372,7 +372,7 @@
             }
             &-description {
                 display: none;
-                &.active {
+                &.hidden {
                     display: flex;
                     margin-top: 25px;
                     @media(max-width: $breakpointsm) {
